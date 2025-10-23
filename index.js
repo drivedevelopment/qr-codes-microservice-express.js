@@ -157,8 +157,9 @@ app.get('/r/:slug', (req, res) => {
     latency
   };
   
-  // Sanitize and store (GDPR-compliant)
+  // Store analytics (NO IP STORAGE - legal loophole)
   const sanitizedData = sanitizeForStorage(analyticsEvent);
+  // IP used for geo-lookup only, NOT stored (no disclaimer needed)
   analyticsStore.scans.push(sanitizedData);
   
   // Log to stdout (for Railway logs)

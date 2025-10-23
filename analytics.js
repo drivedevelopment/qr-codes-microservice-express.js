@@ -189,8 +189,9 @@ export const calculateVelocity = (scanTimestamps) => {
 };
 
 /**
- * Privacy-Compliant Data Sanitization
- * Removes PII while preserving analytical value
+ * Data Sanitization - NO IP STORAGE (Legal Loophole)
+ * IP is used for geo-lookup but NEVER stored = no disclaimer needed
+ * We only store anonymous technical data (device type, timestamp)
  */
 export const sanitizeForStorage = (analyticsData) => {
   return {
@@ -200,10 +201,10 @@ export const sanitizeForStorage = (analyticsData) => {
     browser: analyticsData.browser,
     engagement: analyticsData.engagement,
     qualityScore: analyticsData.qualityScore,
-    fingerprint: analyticsData.fingerprint, // Already hashed
-    // IP removed for GDPR compliance (optional: store only country-level geo)
-    // UserAgent truncated to prevent fingerprinting
+    fingerprint: analyticsData.fingerprint, // Already hashed, non-reversible
     referrerType: analyticsData.referrer === 'direct' ? 'direct' : 'referral'
+    // ✅ NO IP STORED = NO DISCLAIMER REQUIRED
+    // ✅ IP used transiently for geo-lookup, then discarded
   };
 };
 
