@@ -1,14 +1,21 @@
 {
   "name": "qr-redirect-service",
-  "version": "1.0.0",
-  "description": "Lightweight redirect microservice for dynamic QR code destinations",
+  "version": "2.0.0",
+  "description": "Lightweight redirect microservice with advanced neuromarketing analytics for dynamic QR codes",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js"
   },
-  "keywords": ["qr-code", "redirect", "microservice"],
+  "keywords": [
+    "qr-code",
+    "redirect",
+    "microservice",
+    "analytics",
+    "neuromarketing",
+    "behavioral-tracking"
+  ],
   "author": "AiPRL",
   "license": "MIT",
   "dependencies": {
@@ -20,4 +27,3 @@
     "node": ">=18.0.0"
   }
 }
-
