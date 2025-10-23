@@ -21,23 +21,33 @@ export const redirectConfig = {
   'voice-furniture': process.env.REDIRECT_VOICE_FURNITURE || 
     'https://app.aiprlassist.com/r/1192437/AiPRL%20Furniture%20Voice%20Demk',
   
-  // Reserved for future campaign
-  'reserved-1': process.env.REDIRECT_RESERVED_1 || 
-    'https://aiprlassist.com'
+  // AiPRL Main Website
+  'aiprl': process.env.REDIRECT_AIPRL || 
+    'https://aiprlassist.com',
+  
+  // Orbit Games - QR Code Game
+  'orbit-games': process.env.REDIRECT_ORBIT_GAMES || 
+    'https://app.aiprlassist.com/bots/1453419/176041449991',
+  
+  // Demo Video
+  'demo-video': process.env.REDIRECT_DEMO_VIDEO || 
+    'https://aiprlassist.com/demo'
 };
 
 /**
  * USAGE:
  * 
  * 1. Generate QR codes pointing to:
- *    - https://yourdomain.com/r/fb-home-living
- *    - https://yourdomain.com/r/web-home-living
- *    - https://yourdomain.com/r/voice-furniture
- *    - https://yourdomain.com/r/reserved-1
+ *    - https://qr.aiprlassist.com/r/fb-home-living
+ *    - https://qr.aiprlassist.com/r/web-home-living
+ *    - https://qr.aiprlassist.com/r/voice-furniture
+ *    - https://qr.aiprlassist.com/r/aiprl
+ *    - https://qr.aiprlassist.com/r/orbit-games
+ *    - https://qr.aiprlassist.com/r/demo-video
  * 
  * 2. To update destinations:
- *    - Option A: Edit this file, commit, push (auto-deploys)
- *    - Option B: Set environment variables in Railway dashboard
+ *    - Option A: Edit this file, commit, push (auto-deploys in ~30 sec)
+ *    - Option B: Set environment variables in Railway dashboard (instant)
  * 
  * 3. Environment variables override hardcoded URLs (useful for staging/prod)
  */
